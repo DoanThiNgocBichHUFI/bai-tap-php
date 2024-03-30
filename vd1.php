@@ -12,3 +12,12 @@ try{
 }catch(PDOException $e){
     echo "Connection failed: ". $e->getMessage();exit;
 };
+
+// viet sql
+$sql= "select *from sinhvien";
+// thuc thi sql
+$stm= $conn->query($sql);
+// xu ly du lieu
+// lay du lieu ra
+$data= $stm->fetchAll(PDO::FETCH_OBJ);
+echo '<prev>' ; print_r($data);
